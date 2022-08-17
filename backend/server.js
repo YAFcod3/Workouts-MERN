@@ -1,7 +1,12 @@
 require('dotenv').config()
 
+//connect to db
+require('./db')
 const express= require('express')
 const workoutRoutes= require('./routes/workouts')
+
+
+
 
 //express app
 const app = express()
@@ -17,7 +22,6 @@ app.use((req,res,next)=>{
 
 //routes
 app.use('/api/workouts',workoutRoutes)
-
 
 
 //listen for request
