@@ -25,7 +25,6 @@ const getWorkout = async(req,res)=>{
 }
 
 
-
 //create new workout
 const createWorkout = async (req,res)=>{
     const {title,reps,load}=req.body
