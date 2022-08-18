@@ -32,7 +32,7 @@ const Home = () => {
        }
 
        fetchWorkouts()
-    }, [])
+    }, [dispatch])
 
 
     return ( 
