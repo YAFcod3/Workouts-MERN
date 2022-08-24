@@ -16,12 +16,16 @@ const WorkoutForm = () => {
     const [emptyFields,setEmptyFields]=useState([])
 
 
+
+
+
+    //SUBMIT
     const handleSubmit = async(e)=>{
         e.preventDefault()
     
-
+        //GUARDOS VALORES EN OBJ WORKOUT
         const workout = {title,load,reps}
-        console.log(workout)
+        //console.log(workout)
 
 
         const response= await fetch('http://localhost:4000/api/workouts',{method:'POST',

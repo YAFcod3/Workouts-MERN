@@ -5,6 +5,7 @@ const cors = require('cors')
 require('./db')
 const express= require('express')
 const workoutRoutes= require('./routes/workouts')
+const userRoutes = require ('./routes/user.js')
 
 
 
@@ -24,6 +25,7 @@ app.use((req,res,next)=>{
 
 //routes
 app.use('/api/workouts',workoutRoutes)
+app.use('/api/user',userRoutes)
 
 
 //listen for request
