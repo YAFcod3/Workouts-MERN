@@ -1,4 +1,5 @@
-const { useState } = require("react")
+import { useState } from "react"
+import { useLogin } from "../hooks/useLogin"
 
 
 
@@ -10,13 +11,18 @@ const { useState } = require("react")
 
     const[email,setEmail]=useState('')
     const[password,setPassword]=useState('')
+    //  CUSTOM HOOK
+    const {login,error,isLoading}=useLogin()
 
-    const handleSubmit = (e)=>{
+
+   //SUBMIT
+    const handleSubmit = async(e)=>{
         e.preventDefault()
 
-        console.log(email,password)
+        //console.log(email,password)
+        await login(email,password)
 
-        const user = {email,password}
+        
     }
 
 
@@ -47,7 +53,8 @@ const { useState } = require("react")
             />
             
 
-            <button>Login</button>
+            <button disabled={isLoading}>Log in</button>
+            {error && <div className="error">{error}</div>}
         
         
         </form>
