@@ -4,7 +4,7 @@ const validator = require('validator')
 const jwt = require('jsonwebtoken')
 require('dotenv')
 
-
+//__________________________________________________________________________________________
 //funcion de crear token
 const createToken = (_id)=>{
 
@@ -12,9 +12,9 @@ const createToken = (_id)=>{
 }
 
 
-//___________________________________________________________________________________
+//______________________________LOGIN_____________________________________________________
 
-//login user
+
 const loginUser = async (req,res)=>{
 
     const {email,password}=req.body
@@ -56,8 +56,8 @@ const loginUser = async (req,res)=>{
     
 }
 
-//_________________________________________________________________________________________//
-//SIGNUP USER
+//_______________________________SIGNUP USER__________________________________________________________//
+
 const signup = async (req,res)=>{
 
     const {email,password}=req.body
@@ -107,5 +107,6 @@ const signup = async (req,res)=>{
 
   
 }
+//_________________________________________________________________________________________
 
 module.exports= {signup,loginUser}

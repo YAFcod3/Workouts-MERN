@@ -117,3 +117,24 @@ div.error{
 input.error{
   border:1px solid var(--error)
 }
+
+/*NAVBAR*/
+
+nav{
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 10px;
+}
+
+
+/*AUTH FORMS*/
+form.signup, form.login{
+  max-width: 400px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+}
