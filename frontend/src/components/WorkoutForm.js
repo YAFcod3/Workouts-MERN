@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
+// necesario pa autorizacion
+import { useAuthContext } from "../hooks/useAuthContext";
 
 
 
@@ -7,6 +9,8 @@ import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 const WorkoutForm = () => {
 
     const {dispatch}=useWorkoutsContext()
+     //neces pa autoriz
+     const{user}=useAuthContext()
 
     const [title,setTitle]=useState('')
     const [load,setLoad]=useState('')
@@ -15,6 +19,8 @@ const WorkoutForm = () => {
     const [error,setError]=useState(null)
     const [emptyFields,setEmptyFields]=useState([])
 
+   
+
 
 
 
@@ -22,15 +28,22 @@ const WorkoutForm = () => {
     //SUBMIT
     const handleSubmit = async(e)=>{
         e.preventDefault()
+
+        //neces pa autoriz
+        if(!user){
+          setError('You must be logged in')
+          return
+        }
     
-        //GUARDOS VALORES EN OBJ WORKOUT
+        //creo obj con los datos del form
         const workout = {title,load,reps}
         //console.log(workout)
 
 
         const response= await fetch('http://localhost:4000/api/workouts',{method:'POST',
         body:JSON.stringify(workout),  headers:{
-            'Content-Type':'application/json'
+            'Content-Type':'application/json',
+            'Authorization':`Bearer ${user.token}`
         }})
 
 
