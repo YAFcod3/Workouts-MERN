@@ -24,6 +24,8 @@ export const AuthContextProvider = ({children})=>{
 
     const [state,dispatch ]=useReducer(authReducer,{user:null})
 
+    
+
     //add auth persistente
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem('user'))

@@ -12,10 +12,16 @@ import {useAuthContext} from './useAuthContext'
     //dispatch
     const {dispatch}=useAuthContext()
 
+
+
+
+
     const signup = async(email,password)=>{
         
         setIsLoading(true)
         setError(null)
+
+        
 
         const response= await fetch('http://localhost:4000/api/user/signup',{
             method:'POST',

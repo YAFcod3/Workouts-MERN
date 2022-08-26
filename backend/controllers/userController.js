@@ -21,7 +21,7 @@ const loginUser = async (req,res)=>{
 
     try {
 
-        //validator
+        
         if(!email || !password){
             throw Error('ALL fields must be filled')   //pa'l catch
         }

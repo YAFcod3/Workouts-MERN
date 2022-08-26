@@ -23,7 +23,8 @@ const requireAuth = async(req,res,next)=>{
     try {
         const {_id}= jwt.verify(token,'LLAVESECRETA')//ponerlo en env despues
        
-        req.user=await User.findOne({_id}).select('_id')
+        //ojo m ayuda a obtener el user pa relac con su workout
+        req.user =await User.findOne({_id}).select('_id')
         next()
         
     } catch (error) {

@@ -12,6 +12,7 @@ import {useSignup} from '../hooks/useSignup'
 
     const[email,setEmail]=useState('')
     const[password,setPassword]=useState('')
+    
     //custom hook
     const {signup,error,isLoading}=useSignup()
 

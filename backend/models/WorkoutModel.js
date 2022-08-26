@@ -14,6 +14,11 @@ const workoutSchema = new Schema({
     load:{
         type:Number,
         required:true
+    },
+    //add pa asiganrle al usuario solo sus workouts
+    user_id:{
+        type:String,
+        required:true
     }
 
 }, {timestamps:true}

@@ -21,7 +21,7 @@ const Home = () => {
     //const [workouts, setWorkouts] = useState(null)
 
     const {workouts,dispatch}=useWorkoutsContext()
-
+    
     const {user}=useAuthContext()
 
     
