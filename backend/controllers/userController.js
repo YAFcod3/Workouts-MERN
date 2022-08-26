@@ -2,13 +2,12 @@ const User = require('../models/userModel')
 const bcrypt = require('bcrypt')
 const validator = require('validator')
 const jwt = require('jsonwebtoken')
-require('dotenv')
 
 //__________________________________________________________________________________________
 //funcion de crear token
 const createToken = (_id)=>{
 
-   return jwt.sign(  {_id}, 'LLAVESECRETA',  {expiresIn:'3d'} )
+   return jwt.sign(  {_id}, process.env.SECRET,  {expiresIn:'3d'} )
 }
 
 

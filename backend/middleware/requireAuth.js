@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken')
 const User= require('../models/userModel')
 
+
 const requireAuth = async(req,res,next)=>{
 
 
@@ -21,7 +22,7 @@ const requireAuth = async(req,res,next)=>{
     const token = authorization.split(' ')[1]
 
     try {
-        const {_id}= jwt.verify(token,'LLAVESECRETA')//ponerlo en env despues
+        const {_id}= jwt.verify(token,process.env.SECRET)//ponerlo en env despues
        
         //ojo m ayuda a obtener el user pa relac con su workout
         req.user =await User.findOne({_id}).select('_id')
