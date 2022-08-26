@@ -25,6 +25,15 @@ header .container{
   justify-content: space-between;
 }
 
+@media (max-width:600px) {
+  header .container{
+  display: block;
+  }
+ 
+
+  
+} 
+
 header a{
   color: #333;
   text-decoration: none;
@@ -43,6 +52,15 @@ header a{
   gap: 100px;
 
 }
+
+@media (max-width:900px) { 
+  .home{
+    grid:unset;
+    display:flex;
+    flex-direction: column-reverse;
+    
+  }
+} 
 
 .workout-details{
   background: #fff;
